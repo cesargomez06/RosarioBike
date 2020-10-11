@@ -1,0 +1,18 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+html {
+    background-color: aquamarine;
+}
+h1 {
+    text-align: center;
+}
+.productos {
+    display: inline-block;
+    padding: 50px;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
