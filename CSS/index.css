@@ -9,7 +9,7 @@ h1 {
     text-align: center;
 }
 .productos {
-    display: inline-block;
+    display: flex;
     padding: 50px;
 }
 img {
