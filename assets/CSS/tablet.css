@@ -1,0 +1,38 @@
+@media (min-width: 769px) and (max-width: 1199px) {
+    .menu-principal {
+       justify-items: center;
+       align-items: center;
+    }
+    .menu-principal h1 {
+        grid-area:1/2/1/3;
+    }
+    .menu-principal-buscar {
+        grid-area: 2/1/2/2;
+    }
+    .buscar-input {
+        width: 150px;
+    }
+    .menu-principal-carrito {
+        grid-area: 2/2/2/3;
+        justify-self: end;
+    }
+    .cta {
+        justify-self: end;
+    }
+    .whatsapp {
+    right: 0px;
+    }
+    .nosotros {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nosotros p {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .productos-todos {
+        width: 50vh;
+    }
+}

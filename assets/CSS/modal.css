@@ -1,0 +1,114 @@
+.modal-container {
+    opacity: 0;
+    margin: 100px auto;
+    visibility: hidden;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 130vh;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    
+    
+    
+    
+}
+.close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: #c44a4a;
+    color: #fff;
+    line-height: 25px;
+    cursor: pointer;
+    border-radius: 50%;
+
+}
+.modal {
+    padding: 50px;
+    width: 90%;
+    height: 90%;
+    background-color: #ffffff;
+    justify-content: space-around;
+    
+    
+    position: relative;
+    transition: transform 2s;
+    transform: translateY(0%);
+    border-radius: 10px;
+    
+    
+}
+.modal-close{
+    transform: translateY(-200%);
+    display: grid;
+    grid-auto-rows: 50px;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+.modal img {
+    height: 50%;
+}
+
+.modal-title {
+   
+    grid-area: 1/1/4/4;
+    color: rgba(199, 236, 63, 0.9);
+  
+    align-items: center;
+    background: darkblue;
+    
+}
+.modal-header {
+    display: inline-block;
+    justify-content: space-around;
+    justify-self:center;
+    justify-items: center;
+    width: 350px;
+    border: darkred solid 2px;
+    
+    
+    background-color: darkcyan;
+}
+.total {
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+.total p {
+    padding: 20px;
+    margin: 20px;
+}
+.total button {
+    grid-area: 1/3/1/4;
+    display: flex;
+    background-color: #e2c044;
+    color: white;
+    text-decoration: none;
+    place-self: center;
+    padding: 3px;
+    width: 120px;
+    height: auto;
+    margin-left: 2px;
+    border: 1px solid #e2c010;
+    box-shadow: inset 0px 0px 6px #fff;
+    -webkit-box-shadow: inset 0px 0px 6px #fff;
+    vertical-align:center;
+    border-radius: 3px;
+    font: bold 21px Helvetica, Sans-Serif;
+    text-transform: uppercase;
+    
+    
+}
+
+.shopping-cart-image {
+    width: 100px;
+    
+    border: solid green 3px;
+}
+.shoppingCartItem {
+    display: grid;
+    
+}
