@@ -70,20 +70,13 @@ h1 {
     padding: 3px;
     width: 100px;
     height: auto;
-    
     margin: 0 auto;
     border: 1px solid #e2c010;
-
-
- 
     box-shadow: inset 0px 0px 6px #fff;
     -webkit-box-shadow: inset 0px 0px 6px #fff;
     vertical-align:middle;
     border-radius: 3px;
- 
     font: bold 15px Helvetica, Sans-Serif;
-    
-    
 }
 .cta {
     text-transform: uppercase;

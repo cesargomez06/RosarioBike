@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./assets/CSS/modal.css">
     <link rel="stylesheet" href="./assets/CSS/mobile.css">
     <link rel="stylesheet" href="./assets/CSS/tablet.css">
+    <link rel="stylesheet" href="./assets/CSS/carrito.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,700&display=swap" rel="stylesheet">
     
     <title>Rosario Bike-Tienda de bicicletas</title>
@@ -27,8 +28,9 @@
       
         <button class="menu-principal-carrito">
             <div >
-                <a href="#" class="cta">Ver carrito</a>
+                <a href="#" class="cta">Ver carrito
                 <img src="./assets/imagenes/shopping-cart.png">
+                </a>
             </div>
        </nav>
      <h3>Comprar tu bicicleta online nunca fue tan facil</h3>
@@ -40,7 +42,7 @@
             </h2>
             <img class="item-image" src="./assets/imagenes/1 bici azul.png" alt="">
             <h5 class= "item-price">$30.000</h5>
-            <button class="productos-boton addToCart">Añadir al carrito</button>
+            <a href="#"><button class="productos-boton addToCart" onclick="agregarProducto1()">Añadir al carrito</button></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
             
         </div>
@@ -50,7 +52,7 @@
             </h2>
             <img class="item-image" src="./assets/imagenes/2 bici azul.png" alt="">
             <h5 class= "item-price">$35.000</h5>
-            <button class="productos-boton addToCart" >Añadir al carrito</button>
+            <a href="#"><button class="productos-boton addToCart" onclick="agregarProducto2()" >Añadir al carrito</button></a>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
             
         </div>
@@ -60,7 +62,7 @@
             </h2>
             <img class="item-image" src="./assets/imagenes/3 bici ruta.png" alt="">
             <h5 class= "item-price">$40.000</h5>
-            <button class="productos-boton addToCart">Añadir al carrito</button>
+            <button class="productos-boton addToCart" onclick="agregarProducto3()">Añadir al carrito</button>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
             
         </div>
@@ -75,11 +77,11 @@
             
         </div>
         <div class="productos-todos">
-            <h2 class="item-title">
+            <h2 class="item-title biciText" >
                 Bicicleta 5
             </h2>
-            <img class="item-image" src="./assets/imagenes/5 bici blanca.png" alt="">
-            <h5 class= "item-price">$50.000</h5>
+            <img class="item-image biciImg" src="./assets/imagenes/5 bici blanca.png" alt="">
+            <h5 class= "item-price biciPrecio">$50.000</h5>
             <button class="productos-boton addToCart">Añadir al carrito</button>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
             
@@ -110,19 +112,40 @@
         <p>Tratando de innovar y basandonos en la calidad de atencion 100% personalizada</p>
         <p>Para que todos puedan seguir teniendo esa bici que tanto desean</p>
     </section>
+
     <div class="modal-container" id="carrito">
         
             <div class="modal modal-close">
                 <p class="close">X</p>
-            
-            <div>
                 <h2 class="modal-title">Lista de compras</h2>
-                <h3 class="modal-header">Productos</h3>
-                <h3 class="modal-header">Precio</h3>
-                <h3 class="modal-header">Cantidad</h3>
-                <li class="modal-item">
-                    Producto 1
-                </li>
+                <table class="carrito">
+                    <tr>
+                      <td><h3 class="modal-header">Productos</h3></td>
+                      <td><h3 class="modal-header">Cantidad</h3></td>
+                      <td><h3 class="modal-header">Precio</h3></td>
+                    </tr>
+                    
+                    <tr id="probando">
+                      <td class="producto1"></td>
+                      <td class="cantidad1"></td>
+                      <td class="precio1"></td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="producto2"></td>
+                      <td class="cantidad2"></td>
+                      <td class="precio2"></td>
+                    </tr>
+                    
+                    <tr>
+                      <td class="producto3"></td>
+                      <td class="cantidad3"></td>
+                      <td class="precio3"></td>
+                    </tr>
+                </table>
+            <div>
+                
+                
             </div>
             <div class="total ">
                 <h3>Total</h3>
@@ -132,7 +155,7 @@
             <tbody>
                 
             </tbody>
-
+        </div>
     </div>
 
     <footer>
@@ -162,8 +185,8 @@
     
     <script src="./assets/Javascript/modal.js"></script>
     <script src="./assets/Javascript/productos.js"></script>
-    <script src="./assets/Javascript/carrito.js"></script>
-    <script src="./assets/Javascript/clase7.js"></script>
+    <!--<script src="./assets/Javascript/carrito.js"></script>-->
+    <!--<script src="./assets/Javascript/clase7.js"></script>-->
     
     
    

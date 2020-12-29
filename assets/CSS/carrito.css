@@ -1,0 +1,14 @@
+.modal-container img {
+    height: 25px;
+    width: 25px;
+}
+table {
+    width: 100%;
+    border: 1px solid #000;
+ }
+ tr, td {
+    width: 25%;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #000;
+ }

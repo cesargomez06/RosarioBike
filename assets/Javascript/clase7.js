@@ -19,4 +19,8 @@ let carrito = JSON.parse(localStorage.getItem("carrito"));
 //console.log(carrito.color);*/
 
 
+const resultado = document.head;
+
+console.log(resultado);
+
 

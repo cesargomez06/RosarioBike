@@ -19,3 +19,4 @@ console.table(carritoCompras);
 carritoCompras.splice(1,1);
 
 console.table(carritoCompras);
+

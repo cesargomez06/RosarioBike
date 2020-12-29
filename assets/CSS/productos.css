@@ -4,7 +4,9 @@
     flex-wrap: wrap;
     justify-content: space-around;
     
-    
+}
+.productos-boton:hover{
+    cursor: pointer;
 }
 .productos-todos {
     flex-wrap: wrap;
