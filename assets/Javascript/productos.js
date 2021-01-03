@@ -16,8 +16,13 @@ const producto3 = new Producto("Bicicleta 3", 21, "Top Fire", 40000, "Azul");
 
 // Añadir elemento al carrito y abrir modal
 
-let open1 = document.querySelectorAll(".addToCart")[1];
-let open2 = document.querySelectorAll(".addToCart")[2];
+const agregarPrimero = document.querySelector("#agregarProducto1");
+agregarPrimero.onclick = agregarProducto1;
+const agregarSegundo = document.querySelector("#agregarProducto2");
+agregarSegundo.onclick = agregarProducto2;
+const agregarTercero = document.querySelector("#agregarProducto3");
+agregarTercero.onclick = agregarProducto3;
+
 
 function agregarProducto1(){
     let open = document.querySelectorAll(".addToCart")[0];
