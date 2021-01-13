@@ -22,9 +22,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Funciones
+
+function limpiarProductos(){
+    while (listaProductos.firstChild) {
+        listaProductos.removeChild(listaProductos.firstChild);
+    }
+}
+
 function filtrarProducto(e) {
-    e.preventDefault;
-    console.log("buscador");
+    e.preventDefault();
+    const busqueda = document.querySelector("#buscador").value;
+   
+    // Busco en mi stock.js 
+    const resultado = stockProductos.filter(producto => producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
+    
+    limpiarProductos();
+
+
+    resultado.forEach (producto =>{
+
+        const {nombre, imagen, precio, id} = producto;
+
+        const divCard = document.createElement("div");
+        divCard.classList.add("productos-todos");
+        divCard.innerHTML = `
+        <h2 class="item-title">
+                ${nombre}
+        </h2>
+            <img class="item-image" src="${imagen}" >
+            <h5 class= "item-price">${precio}</h5>
+            <a><button class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button></a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
+            `
+            const row = document.createElement('div');
+			row.classList.add('row');
+
+			listaProductos.appendChild(row);
+			row.appendChild(divCard);
+    } )
 }
 function vaciarCarrito() {
     limpiarCarrito();
