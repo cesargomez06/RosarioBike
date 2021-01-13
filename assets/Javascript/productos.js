@@ -1,84 +1,132 @@
-//Agregue el Objeto constructor Producto
-function Producto (nombre,rodado,marca,precio,color) {
-    this.nombre = nombre;
-    this.rodado = rodado;
-    this.marca = marca;
-    this.precio = precio;
-    this.color = color;
+// Selectores
+const carrito = document.querySelector("#carrito");
+const contenedorCarrito = document.querySelector("#lista-carrito tbody");
+const listaProductos = document.querySelector("#lista-productos");
+const btnVaciarCarrito = document.querySelector(".vaciar");
+const formulario = document.querySelector("#formulario");
+
+let articulosCarrito = [];
+
+// Listeners
+listaProductos.addEventListener("click", agregarProducto);
+btnVaciarCarrito.addEventListener("click",vaciarCarrito);
+carrito.addEventListener("click", quitarProducto);
+formulario.addEventListener("submit",filtrarProducto);
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
+    
+	insertarCarritoHTML();
+});
+
+// Funciones
+function filtrarProducto(e) {
+    e.preventDefault;
+    console.log("buscador");
 }
-const producto1 = new Producto("Bicicleta 1", 29, "Top Mega", 30000, "Amarillo");
-const producto2 = new Producto("Bicicleta 2", 29, "Top Mega", 35000, "Negro");
-const producto3 = new Producto("Bicicleta 3", 21, "Top Fire", 40000, "Azul");
-//console.log(producto1);
-//console.log(producto2);
+function vaciarCarrito() {
+    limpiarCarrito();
+    articulosCarrito = [];
+    guardarStorage();
+}
+
+function limpiarCarrito() {
+
+    while (contenedorCarrito.firstChild) {
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+    }
+}
+
+function quitarProducto(e){
+    if(e.target.classList.contains("borrar-producto")){
+        const productoId = e.target.getAttribute("data-id");
+        	/* Filtro los productos del carrito */
+		articulosCarrito = articulosCarrito.filter(producto => producto.id != productoId);
+
+		/* Renderizo el nuevo carrito */
+		insertarCarritoHTML();
+
+		/* Actualizamos el storage */
+		guardarStorage();
+    }
+}
+
+function agregarProducto(e) {
+
+    if(e.target.classList.contains("agregar-carrito")) {
+        // selecciono el elemento padre
+        const productoSeleccionado = e.target.parentElement.parentElement;
+
+        ObtenerDatos(productoSeleccionado);
+    }
+}
+
+
+function ObtenerDatos (producto) {
+    // Extraer informacion del producto
+
+    const productoAgregado = {
+        nombre : producto.querySelector(".item-title").textContent,
+        imagen : producto.querySelector("img").src,
+        precio : producto.querySelector(".item-price").textContent,
+        id: producto.querySelector(".agregar-carrito").getAttribute("data-id"),
+        cantidad:1
+
+    }
+        //Chequeo si el producto que agrego ya existe en el carrito
+    const existe = articulosCarrito.some(producto => producto.id == productoAgregado.id);
+
+    if (existe) {
+        //Producto ya existente 
+        const productos = articulosCarrito.map(producto => {
+            if (producto.id === productoAgregado.id) {
+                producto.cantidad++;
+                return producto;
+            } else {
+                return producto;
+            }
+        });
+        articulosCarrito = [...productos];
+    } else {
+        // Agrego el producto al carrito 
+        articulosCarrito.push(productoAgregado);
+    }
+
+    insertarCarritoHTML();
+    guardarStorage();
+}
+function guardarStorage() {
+    localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+}
+function insertarCarritoHTML (){
+    // Borrar contenido del carrito
+        limpiarCarrito();
+     // Inserto los poductos del carrito en el HTML
+
+    articulosCarrito.forEach (producto => {
+
+        const {imagen, nombre, precio, cantidad, id} = producto;
+
+        const row = document.createElement("tr");
+        row.innerHTML = `
+        <td><input value="1" type="number" min="1" max="10" class="number">${cantidad}</td>
+
+        <td> ${nombre}  <img src="${imagen}"></td>
+         
 
 
 
-// Añadir elemento al carrito y abrir modal
+        <td class="precio"> ${precio}</td>
 
-const agregarPrimero = document.querySelector("#agregarProducto1");
-agregarPrimero.onclick = agregarProducto1;
-const agregarSegundo = document.querySelector("#agregarProducto2");
-agregarSegundo.onclick = agregarProducto2;
-const agregarTercero = document.querySelector("#agregarProducto3");
-agregarTercero.onclick = agregarProducto3;
+        <td > <a href="#" class="borrar-producto" data-id="${id}"> X </a> </td>
+                
+                    `
+                contenedorCarrito.appendChild(row);
 
-
-function agregarProducto1(){
-    let open = document.querySelectorAll(".addToCart")[0];
-    open.addEventListener("click",function(e){
-        e.preventDefault();
-        modalC.style.opacity = "1";
-        modalC.style.visibility = "visible";
-        modal.classList.toggle("modal-close");
-    });
-    let modalLine = document.querySelector(".producto1");
-    modalLine.textContent = producto1.nombre;
-    let modalCantidad = document.querySelector(".cantidad1");
-    modalCantidad.textContent = 1;
-    let modalPrecio = document.querySelector(".precio1");
-    modalPrecio.textContent = producto1.precio;
+    } ); 
+   
 };
 
-function agregarProducto2(){
-    let open = document.querySelectorAll(".addToCart")[1];
-    open.addEventListener("click",function(e){
-        e.preventDefault();
-        modalC.style.opacity = "1";
-        modalC.style.visibility = "visible";
-        modal.classList.toggle("modal-close");
-    });
-    let modalLine = document.querySelector(".producto2");
-    modalLine.textContent = producto2.nombre;
-    let modalCantidad = document.querySelector(".cantidad2");
-    modalCantidad.textContent = 1;
-    let modalPrecio = document.querySelector(".precio2");
-    modalPrecio.textContent = producto2.precio;
-};
-function agregarProducto3(){
-    let open = document.querySelectorAll(".addToCart")[2];
-    open.addEventListener("click",function(e){
-        e.preventDefault();
-        modalC.style.opacity = "1";
-        modalC.style.visibility = "visible";
-        modal.classList.toggle("modal-close");
-    });
-    let modalLine = document.querySelector(".producto3");
-    modalLine.textContent = producto3.nombre;
-    let modalCantidad = document.querySelector(".cantidad3");
-    modalCantidad.textContent = 1;
-    let modalPrecio = document.querySelector(".precio3");
-    modalPrecio.textContent = producto3.precio;
-};
-
-
-
-
-
-
-
-
-
-
-
-
+    
