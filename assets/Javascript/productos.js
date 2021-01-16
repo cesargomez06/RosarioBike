@@ -5,6 +5,16 @@ const listaProductos = document.querySelector("#lista-productos");
 const btnVaciarCarrito = document.querySelector(".vaciar");
 const formulario = document.querySelector("#formulario");
 
+$(document).ready(function(){ 
+    $("a.logo").fadeIn(4000); 
+});
+
+$("h5.item-price").hover(function(){
+    $("p").slideDown(2000);
+})
+
+
+
 let articulosCarrito = [];
 
 // Listeners
@@ -13,6 +23,10 @@ btnVaciarCarrito.addEventListener("click",vaciarCarrito);
 carrito.addEventListener("click", quitarProducto);
 formulario.addEventListener("submit",filtrarProducto);
 
+
+function aumentarCantidad() {
+    console.log("perritos");
+};
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -146,16 +160,11 @@ function insertarCarritoHTML (){
 
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td><input value="1" type="number" min="1" max="10" class="number">${cantidad}</td>
-
-        <td> ${nombre}  <img src="${imagen}"></td>
-         
-
-
-
+        <td><button class="aumentar" id="aumentar-producto">+</button><input type="text" class="cantidad-carrito" id="cantidad" value="${cantidad}"><button class="disminuir">-</button></td>
+        <td>${nombre}  </td>
+        <td> <img src="${imagen}"></td>
         <td class="precio"> ${precio}</td>
-
-        <td > <a href="#" class="borrar-producto" data-id="${id}"> X </a> </td>
+        <td class="img-eliminar"> <img style="cursor: pointer" src="./assets/imagenes/eliminar.png"  class="borrar-producto" data-id="${id}"> </td>
                 
                     `
                 contenedorCarrito.appendChild(row);
@@ -163,5 +172,3 @@ function insertarCarritoHTML (){
     } ); 
    
 };
-
-    
