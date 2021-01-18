@@ -5,6 +5,8 @@ const listaProductos = document.querySelector("#lista-productos");
 const btnVaciarCarrito = document.querySelector(".vaciar");
 const formulario = document.querySelector("#formulario");
 
+
+// Jquery
 $(document).ready(function(){ 
     $("a.logo").fadeIn(4000); 
 });
@@ -22,12 +24,6 @@ listaProductos.addEventListener("click", agregarProducto);
 btnVaciarCarrito.addEventListener("click",vaciarCarrito);
 carrito.addEventListener("click", quitarProducto);
 formulario.addEventListener("submit",filtrarProducto);
-
-
-function aumentarCantidad() {
-    console.log("perritos");
-};
-
 
 document.addEventListener('DOMContentLoaded', () => {
     articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -127,6 +123,7 @@ function ObtenerDatos (producto) {
         //Chequeo si el producto que agrego ya existe en el carrito
     const existe = articulosCarrito.some(producto => producto.id == productoAgregado.id);
 
+    
     if (existe) {
         //Producto ya existente 
         const productos = articulosCarrito.map(producto => {
@@ -142,9 +139,10 @@ function ObtenerDatos (producto) {
         // Agrego el producto al carrito 
         articulosCarrito.push(productoAgregado);
     }
-
+    
     insertarCarritoHTML();
     guardarStorage();
+  
 }
 function guardarStorage() {
     localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
@@ -160,15 +158,30 @@ function insertarCarritoHTML (){
 
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td><button class="aumentar" id="aumentar-producto">+</button><input type="text" class="cantidad-carrito" id="cantidad" value="${cantidad}"><button class="disminuir">-</button></td>
-        <td>${nombre}  </td>
+        <td><button class="aumentar" id="aumentar-producto" onClick="aumentarCantidad("${id}")">+</button><input type="text" class="cantidad-carrito" value="${cantidad}"><button class="disminuir">-</button></td>
+        <td>${nombre}</td>
         <td> <img src="${imagen}"></td>
         <td class="precio"> ${precio}</td>
         <td class="img-eliminar"> <img style="cursor: pointer" src="./assets/imagenes/eliminar.png"  class="borrar-producto" data-id="${id}"> </td>
                 
                     `
+                    
                 contenedorCarrito.appendChild(row);
-
+                
     } ); 
-   
+    //const clasAumentar = document.querySelector(".aumentar");
+    //const idBoton = clasAumentar.getAttribute("data-id");
+    
+    //idBoton.addEventListener("click", aumentarCantidad);
+    
+    function aumentarCantidad(id){
+        console.log(id);
+
+
+    
+
+        insertarCarritoHTML();
+        guardarStorage();
+    };
+        
 };
