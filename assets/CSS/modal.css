@@ -41,6 +41,7 @@
     transition: transform 2s;
     transform: translateY(-10%);
     border-radius: 10px;
+    overflow: scroll;
 }
 .modal-close{
     transform: translateY(-200%);

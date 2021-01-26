@@ -7,17 +7,20 @@ const formulario = document.querySelector("#formulario");
 
 
 // Jquery
+
+    
 $(document).ready(function(){ 
     $("a.logo").fadeIn(4000); 
 });
 
-$("h5.item-price").hover(function(){
+$(".productos").hover(function(){
     $("p").slideDown(2000);
-})
+});
 
 
 
 let articulosCarrito = [];
+let stockProductos;
 
 // Listeners
 listaProductos.addEventListener("click", agregarProducto);
@@ -26,6 +29,20 @@ carrito.addEventListener("click", quitarProducto);
 formulario.addEventListener("submit",filtrarProducto);
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    $.ajax({
+        url: "assets/javascript/stock.json",
+        success: function(data,status,xhr){
+            stockProductos = data;
+            cargarListaProductos(data);
+        },
+        error: function (xhr, status, errorThrown) {
+			console.log(xhr)
+			console.log(status)
+			console.log(errorThrown)
+        }
+    });
+
     articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
     
 	insertarCarritoHTML();
@@ -33,55 +50,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Funciones
 
-function limpiarProductos(){
-    while (listaProductos.firstChild) {
-        listaProductos.removeChild(listaProductos.firstChild);
-    }
-}
+function cargarListaProductos(productos) {
+    $('#lista-productos');
+    productos.forEach ((producto) =>{
+
+    const {nombre, imagen, precio, id, descripcion} = producto;
+
+    const divCard = document.createElement("div");
+    divCard.classList.add("productos-todos");
+    divCard.innerHTML = `
+    <h2 class="item-title">
+            ${nombre}
+    </h2>
+        <img class="item-image" src="${imagen}" >
+        <h5 class= "item-price">${precio}</h5>
+        <a><button class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button></a>
+        <p class="item-descripcion">${descripcion}</p>
+        `
+        const row = document.createElement('div');
+        row.classList.add('row');
+
+        listaProductos.appendChild(row);
+        row.appendChild(divCard);
+} )
+} 
+
 
 function filtrarProducto(e) {
     e.preventDefault();
-    const busqueda = document.querySelector("#buscador").value;
+    const busqueda = $("#buscador").val();
    
     // Busco en mi stock.js 
     const resultado = stockProductos.filter(producto => producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
     
     limpiarProductos();
+    cargarListaProductos(resultado);
 
+};
 
-    resultado.forEach (producto =>{
-
-        const {nombre, imagen, precio, id} = producto;
-
-        const divCard = document.createElement("div");
-        divCard.classList.add("productos-todos");
-        divCard.innerHTML = `
-        <h2 class="item-title">
-                ${nombre}
-        </h2>
-            <img class="item-image" src="${imagen}" >
-            <h5 class= "item-price">${precio}</h5>
-            <a><button class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos aperiam velit dolore accusamus iusto molestiae nisi sequi minus quae porro, eum quibusdam eligendi impedit! Expedita vel explicabo id harum vero.</p>
-            `
-            const row = document.createElement('div');
-			row.classList.add('row');
-
-			listaProductos.appendChild(row);
-			row.appendChild(divCard);
-    } )
-}
 function vaciarCarrito() {
     limpiarCarrito();
     articulosCarrito = [];
     guardarStorage();
-}
-
-function limpiarCarrito() {
-
-    while (contenedorCarrito.firstChild) {
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-    }
 }
 
 function quitarProducto(e){
@@ -108,7 +118,6 @@ function agregarProducto(e) {
     }
 }
 
-
 function ObtenerDatos (producto) {
     // Extraer informacion del producto
 
@@ -117,7 +126,9 @@ function ObtenerDatos (producto) {
         imagen : producto.querySelector("img").src,
         precio : producto.querySelector(".item-price").textContent,
         id: producto.querySelector(".agregar-carrito").getAttribute("data-id"),
+        descripcion: producto.querySelector(".item-descripcion").textContent,
         cantidad:1
+        
 
     }
         //Chequeo si el producto que agrego ya existe en el carrito
@@ -147,6 +158,7 @@ function ObtenerDatos (producto) {
 function guardarStorage() {
     localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
 }
+
 function insertarCarritoHTML (){
     // Borrar contenido del carrito
         limpiarCarrito();
@@ -158,7 +170,7 @@ function insertarCarritoHTML (){
 
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td><button class="aumentar" id="aumentar-producto" onClick="aumentarCantidad("${id}")">+</button><input type="text" class="cantidad-carrito" value="${cantidad}"><button class="disminuir">-</button></td>
+        <td><button class="aumentar"  onClick="aumentarCantidad('${id}')">+</button><input type="text" class="cantidad-carrito" value="${cantidad}"><button class="disminuir">-</button></td>
         <td>${nombre}</td>
         <td> <img src="${imagen}"></td>
         <td class="precio"> ${precio}</td>
@@ -167,21 +179,34 @@ function insertarCarritoHTML (){
                     `
                     
                 contenedorCarrito.appendChild(row);
-                
+
+               
     } ); 
-    //const clasAumentar = document.querySelector(".aumentar");
-    //const idBoton = clasAumentar.getAttribute("data-id");
-    
-    //idBoton.addEventListener("click", aumentarCantidad);
-    
-    function aumentarCantidad(id){
-        console.log(id);
-
-
-    
-
-        insertarCarritoHTML();
-        guardarStorage();
-    };
-        
 };
+
+function limpiarCarrito() {
+
+    while (contenedorCarrito.firstChild) {
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+    }
+}
+
+function limpiarProductos(){
+    while (listaProductos.firstChild) {
+        listaProductos.removeChild(listaProductos.firstChild);
+    }
+}
+
+
+
+
+
+
+
+
+
+    
+//function aumentarCantidad(e){
+  //      if(e.target.classList.contains(".cantidad-carrito")){
+    //        console.log(productoAgregado[e.target.dataset.id]);
+      //  };

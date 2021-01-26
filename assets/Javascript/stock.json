@@ -1,0 +1,39 @@
+[
+    {
+      "nombre":"Bicicleta Mtb Topmega Regal ",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_649813-MLA44256951857_122020-F.webp",
+      "precio":"$68.000",
+      "id":"agregarProducto1",
+      "descripcion": "SISTEMA DE FRENO Disco mecánico Topmega. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21"
+    },
+    {
+      "nombre":"Bicicleta 2 azul",
+      "imagen":"./assets/imagenes/2 bici azul.png",
+      "precio":"$35.000",
+      "id":"agregarProducto2"
+    },
+    {
+      "nombre":"Bicicleta 3",
+      "imagen":"./assets/imagenes/3 bici ruta.png",
+      "precio":"$40.000",
+      "id":"agregarProducto3"
+    },
+    {
+      "nombre":"Bicicleta 4",
+      "imagen":"./assets/imagenes/4 bici negra.png",
+      "precio":"$45.000",
+      "id":"agregarProducto4"
+    },
+    {
+      "nombre":"Bicicleta 5",
+      "imagen":"./assets/imagenes/5 bici blanca.png",
+      "precio":"$50.000",
+      "id":"agregarProducto5"
+    },
+    {
+      "nombre":"Bicicleta 6",
+      "imagen":"./assets/imagenes/6 bici negra-amarilla.png",
+      "precio":"$60.000",
+      "id":"agregarProducto6"
+    }
+  ]
