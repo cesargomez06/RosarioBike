@@ -4,13 +4,14 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const listaProductos = document.querySelector("#lista-productos");
 const btnVaciarCarrito = document.querySelector(".vaciar");
 const formulario = document.querySelector("#formulario");
+const totalCarrito = document.getElementById("totalCarrito");
 
 
 // Jquery
 
-    
-$(document).ready(function(){ 
-    $("a.logo").fadeIn(4000); 
+
+$(document).ready(function(){
+    $("a.logo").fadeIn(4000);
 });
 
 $(".productos").hover(function(){
@@ -23,7 +24,7 @@ let articulosCarrito = [];
 let stockProductos;
 
 // Listeners
-listaProductos.addEventListener("click", agregarProducto);
+
 btnVaciarCarrito.addEventListener("click",vaciarCarrito);
 carrito.addEventListener("click", quitarProducto);
 formulario.addEventListener("submit",filtrarProducto);
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     articulosCarrito = JSON.parse(localStorage.getItem('carrito')) || [];
-    
+
 	insertarCarritoHTML();
 });
 
@@ -53,19 +54,19 @@ document.addEventListener('DOMContentLoaded', () => {
 function cargarListaProductos(productos) {
     $('#lista-productos');
     productos.forEach ((producto) =>{
-
+        
     const {nombre, imagen, precio, id, descripcion} = producto;
 
     const divCard = document.createElement("div");
     divCard.classList.add("productos-todos");
     divCard.innerHTML = `
-    <h2 class="item-title">
+        <h2 class="item-title">
             ${nombre}
-    </h2>
+        </h2>
         <img class="item-image" src="${imagen}" >
-        <h5 class= "item-price">${precio}</h5>
-        <a><button class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button></a>
-        <p class="item-descripcion">${descripcion}</p>
+        <h5 class= "item-price">$${precio}</h5>
+        <button onclick="agregarProducto(event, '${id}')" onClick="aumentarCantidad('${id}')"class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button>
+        ${descripcion ? `<p class="item-descripcion">${descripcion}</p>` : ""}
         `
         const row = document.createElement('div');
         row.classList.add('row');
@@ -73,16 +74,16 @@ function cargarListaProductos(productos) {
         listaProductos.appendChild(row);
         row.appendChild(divCard);
 } )
-} 
+}
 
 
 function filtrarProducto(e) {
     e.preventDefault();
     const busqueda = $("#buscador").val();
-   
-    // Busco en mi stock.js 
+
+    // Busco en mi stock.js
     const resultado = stockProductos.filter(producto => producto.nombre.toLocaleLowerCase().includes(busqueda.toLocaleLowerCase()));
-    
+
     limpiarProductos();
     cargarListaProductos(resultado);
 
@@ -108,13 +109,13 @@ function quitarProducto(e){
     }
 }
 
-function agregarProducto(e) {
-
-    if(e.target.classList.contains("agregar-carrito")) {
-        // selecciono el elemento padre
-        const productoSeleccionado = e.target.parentElement.parentElement;
-
-        ObtenerDatos(productoSeleccionado);
+function agregarProducto(event, id) {
+    if(!articulosCarrito.some(producto => producto.id == id)){
+        const producto = stockProductos.find(producto => producto.id == id);
+        producto.cantidad = 1;
+        articulosCarrito.push(producto);
+        insertarCarritoHTML();
+        guardarStorage();
     }
 }
 
@@ -128,15 +129,15 @@ function ObtenerDatos (producto) {
         id: producto.querySelector(".agregar-carrito").getAttribute("data-id"),
         descripcion: producto.querySelector(".item-descripcion").textContent,
         cantidad:1
-        
+
 
     }
         //Chequeo si el producto que agrego ya existe en el carrito
     const existe = articulosCarrito.some(producto => producto.id == productoAgregado.id);
 
-    
+
     if (existe) {
-        //Producto ya existente 
+        //Producto ya existente
         const productos = articulosCarrito.map(producto => {
             if (producto.id === productoAgregado.id) {
                 producto.cantidad++;
@@ -147,13 +148,13 @@ function ObtenerDatos (producto) {
         });
         articulosCarrito = [...productos];
     } else {
-        // Agrego el producto al carrito 
+        // Agrego el producto al carrito
         articulosCarrito.push(productoAgregado);
     }
-    
+
     insertarCarritoHTML();
     guardarStorage();
-  
+
 }
 function guardarStorage() {
     localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
@@ -161,34 +162,34 @@ function guardarStorage() {
 
 function insertarCarritoHTML (){
     // Borrar contenido del carrito
-        limpiarCarrito();
-     // Inserto los poductos del carrito en el HTML
-
+    limpiarCarrito();
+    let sumaPrecios = 0;
+    // Inserto los poductos del carrito en el HTML
     articulosCarrito.forEach (producto => {
-
         const {imagen, nombre, precio, cantidad, id} = producto;
 
         const row = document.createElement("tr");
         row.innerHTML = `
-        <td><button class="aumentar"  onClick="aumentarCantidad('${id}')">+</button><input type="text" class="cantidad-carrito" value="${cantidad}"><button class="disminuir">-</button></td>
-        <td>${nombre}</td>
-        <td> <img src="${imagen}"></td>
-        <td class="precio"> ${precio}</td>
-        <td class="img-eliminar"> <img style="cursor: pointer" src="./assets/imagenes/eliminar.png"  class="borrar-producto" data-id="${id}"> </td>
-                
-                    `
-                    
-                contenedorCarrito.appendChild(row);
+            <td><button class="aumentar"  onClick="aumentarCantidad('${id}')">+</button><input type="text" class="cantidad-carrito" value="${cantidad}"><button onclick="disminuirCantidad('${id}')" class="disminuir">-</button></td>
+            <td>${nombre}</td>
+            <td> <img src="${imagen}"></td>
+            <td class="precio">$${precio}</td>
+            <td class="img-eliminar"> <img style="cursor: pointer" src="./assets/imagenes/eliminar.png"  class="borrar-producto" data-id="${id}"> </td>
+        `
 
-               
-    } ); 
+        contenedorCarrito.appendChild(row);
+        sumaPrecios += precio * cantidad;
+        
+    } );
+    totalCarrito.innerHTML = `$${sumaPrecios}`;
+    
 };
+ 
 
 function limpiarCarrito() {
-
-    while (contenedorCarrito.firstChild) {
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-    }
+    contenedorCarrito.innerHTML = '';
+    sumaPrecios = 0;
+    totalCarrito.innerHTML = `$${sumaPrecios}`;
 }
 
 function limpiarProductos(){
@@ -197,16 +198,17 @@ function limpiarProductos(){
     }
 }
 
-
-
-
-
-
-
-
-
-    
-//function aumentarCantidad(e){
-  //      if(e.target.classList.contains(".cantidad-carrito")){
-    //        console.log(productoAgregado[e.target.dataset.id]);
-      //  };
+function aumentarCantidad(id){
+    articulosCarrito.map(producto => {
+        if(producto.id == id) producto.cantidad++;
+    });
+    insertarCarritoHTML();
+    guardarStorage();
+};
+function disminuirCantidad(id){
+    articulosCarrito.map(producto => {
+        if(producto.id == id && producto.cantidad > 1) producto.cantidad--;
+    });
+    insertarCarritoHTML();
+    guardarStorage();
+}

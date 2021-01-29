@@ -1,39 +1,44 @@
 [
     {
-      "nombre":"Bicicleta Mtb Topmega Regal ",
+      "nombre":"Bicicleta Mtb Topmega Regal Mtb Rodado 29",
       "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_649813-MLA44256951857_122020-F.webp",
-      "precio":"$68.000",
+      "precio":68000,
       "id":"agregarProducto1",
-      "descripcion": "SISTEMA DE FRENO Disco mecánico Topmega. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21"
+      "descripcion": "SISTEMA DE FRENO Disco mecánico Topmega. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21. TALLE: L."
     },
     {
-      "nombre":"Bicicleta 2 azul",
-      "imagen":"./assets/imagenes/2 bici azul.png",
-      "precio":"$35.000",
-      "id":"agregarProducto2"
+      "nombre":"Bicicleta Topmega Regal Mtb Rodado 29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_923971-MLA44140030322_112020-F.webp",
+      "precio":68000,
+      "id":"agregarProducto2",
+      "descripcion":"SISTEMA DE FRENO: Disco mecánico Top Mega.MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21. TALLE: L."
     },
     {
-      "nombre":"Bicicleta 3",
-      "imagen":"./assets/imagenes/3 bici ruta.png",
-      "precio":"$40.000",
-      "id":"agregarProducto3"
+      "nombre":"Bicicleta Topmega Sunshine Mtb Rodado 29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_959829-MLA44438107807_122020-F.webp",
+      "precio":77000,
+      "id":"agregarProducto3",
+      "descripcion":"SISTEMA DE FRENO. A disco mecánico 160 mm. MANIJAS DE CAMBIO. Shimano Tourney.VELOCIDADES 21. TALLE: S."
     },
     {
-      "nombre":"Bicicleta 4",
-      "imagen":"./assets/imagenes/4 bici negra.png",
-      "precio":"$45.000",
-      "id":"agregarProducto4"
+      "nombre":"Bicicleta Mtb Topmega Flamingo Rodado 29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_622532-MLA44496232755_012021-F.webp",
+      "precio":57000,
+      "id":"agregarProducto4",
+      "descripcion":" SISTEMA DE FRENO Disco mecánico TOPMEGA. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21. TALLE: M."
     },
     {
-      "nombre":"Bicicleta 5",
-      "imagen":"./assets/imagenes/5 bici blanca.png",
-      "precio":"$50.000",
-      "id":"agregarProducto5"
+      "nombre":"Bicicleta Topmega Mtb Thor Rodado 29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_750649-MLA44519802974_012021-F.webp",
+      "precio":93800,
+      "id":"agregarProducto5",
+      "descripcion":"SISTEMA DE FRENO Disco mecánico TOPMEGA. MANIJAS DE CAMBIOS Rapid Fire Index. VELOCIDADES 24. TALLE: L."
     },
     {
-      "nombre":"Bicicleta 6",
-      "imagen":"./assets/imagenes/6 bici negra-amarilla.png",
-      "precio":"$60.000",
-      "id":"agregarProducto6"
+      "nombre":"Bicicleta Topmega Marathon Rodado 29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_809690-MLA31635984152_072019-F.webp",
+      "precio":149.000,
+      "id":"agregarProducto6",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
     }
   ]
