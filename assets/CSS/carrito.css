@@ -111,3 +111,6 @@ outline: none;
 padding: 0rem;
 
 }
+.botonComprar {
+    cursor: pointer;
+}

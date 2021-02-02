@@ -9,6 +9,7 @@ abrir.addEventListener("click",function(e){
     e.preventDefault();
     fix.style.position = "fixed"
     modalC.style.opacity = "1";
+    modalC.style.backdropFilter = "blur(2px)";
     modalC.style.visibility = "visible";
     modal.classList.toggle("modal-close");
 });
