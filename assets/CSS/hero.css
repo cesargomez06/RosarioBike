@@ -1,0 +1,102 @@
+.superior {
+    background-color: rgba(30, 32, 25,1);
+}
+.menu-superior {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(30, 32, 25,0.5);
+    margin: 0;
+    
+}
+.menu-superior-lista {
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+    justify-content: flex-end;
+    margin-right: 3vh;
+    margin-bottom: 1vh;
+    margin-top: 0;
+    padding: 2vh;
+}
+.menu-superior-lista a {
+    text-decoration: none;
+}
+.menu-superior-lista h3{
+    align-content: center;
+    font-size: 2.5vh;
+    margin: 2vh;
+}
+.portada {
+    background-color: #1e2019;
+    padding-block-end: 10vh;
+
+}
+.portada {
+    display: grid;
+    justify-content: flex-end;
+    align-self: center;
+}
+.portada h2 {
+    display: unset;
+    grid-area: 1/1/2/2;
+    margin: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: aliceblue;
+    font-size: 10vh;
+    text-transform: none;
+    justify-self: center;
+
+}
+.portada p {
+    display: unset;
+    grid-area: 3/1/4/2;
+    margin: 5vh;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 100;
+    color: aliceblue;
+    justify-self: center;
+}
+.portada-tienda {
+    justify-self: center;
+    grid-area: 2/1/3/2;
+    margin: 5vh;
+    background-color: rgb(226, 192, 68) ;
+    font: bold 15px "roboto", Sans-Serif;
+    color: white;
+    text-transform: uppercase;
+    width: 50vh;
+    height: 7vh;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 6px #fff;
+    -webkit-box-shadow: inset 0px 0px 6px #fff;
+    text-align: center;
+    text-decoration: none;
+    padding-top: 1vh;
+    font-size: 3.3vh;
+    vertical-align: middle;
+    transition:all .5s;
+}
+.portada-tienda:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 5px 1rem 2rem rgb(244 244 0 / 30%);
+}
+.portada div {
+    grid-area: 1/2/5/3;
+    
+    
+}
+.portada div a img {
+    border-radius: 10px;
+    width: 117vh;
+    max-height: 77vh;
+    margin-right: 4vh;
+}
+.menu-superior h2{
+    color: aliceblue;
+    text-align: left;
+    margin-top: 3vh;
+    margin-left: 5vh;
+
+}

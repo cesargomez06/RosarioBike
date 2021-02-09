@@ -5,9 +5,6 @@
     justify-content: space-around;
     
 }
-.productos-boton:hover{
-    cursor: pointer;
-}
 .productos-todos {
     flex-wrap: wrap;
     flex-direction: column;
@@ -16,6 +13,8 @@
     padding: 5px;
     margin: 5px;
     width: 90vh;
+    box-shadow: 0 2px 10px rgba(45,41,56,.14);
+    z-index: 1;
 }
 .productos-todos img {
     width: 100%;
@@ -54,7 +53,6 @@ h4 {
     color: white;
     text-decoration: none;
     justify-self: end;
-    place-self: center;
     text-transform: uppercase;
     width: 200px;
     height: 40px;
@@ -65,8 +63,22 @@ h4 {
     -webkit-box-shadow: inset 0px 0px 6px #fff;
     vertical-align:middle;
     border-radius: 10px;
-    
+    transition:all 2.5s ease;
     font: bold 15px Helvetica, Sans-Serif;
+}
+.productos-todos p {
+    opacity: 0;
+    display: block;
+    height: auto;
+    transition:all 0.7s ease;
+}
+.productos-todos:hover p{
+    opacity: 1;
+}
+.productos-boton:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 3px 1rem 2rem rgb(0 0 0 / 30%);
+    cursor: pointer;
 }
 .redes {
     padding: 10px;

@@ -7,23 +7,23 @@ const formulario = document.querySelector("#formulario");
 const totalCarrito = document.getElementById("totalCarrito");
 const totalProductos = document.getElementById("totalProductos");
 
-
-
-
 // Jquery
-
-
 $(document).ready(function(){
     $("a.logo").fadeIn(4000);
 });
 
-$(".productos").hover(function(){
-    $("p").slideDown(2000);
+$(".whatsapp img").hover(function(){
+    $("p").slideDown(1000);
+})
+
+$(document).ready(function(){
+    linkInterno = $('a[href^="#"]');
+    linkInterno.on('click',function(e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $('html, body').animate({ scrollTop : $( href ).offset().top }, 1300, "easeInOutExpo");
+    });
 });
-
-
-
-
 
 let articulosCarrito = [];
 let stockProductos;
@@ -71,13 +71,15 @@ function cargarListaProductos(productos) {
         <img class="item-image" src="${imagen}" >
         <h5 class= "item-price">$${precio}</h5>
         <button onclick="agregarProducto(event, '${id}')" onClick="aumentarCantidad('${id}')"class="productos-boton agregar-carrito" data-id=${id}>Añadir al carrito</button>
-        ${descripcion ? `<p class="item-descripcion">${descripcion}</p>` : ""}
+        ${descripcion ? `<p class="item-descripcion">${descripcion}</p>` : ""
+    }
         `
         const row = document.createElement('div');
         row.classList.add('row');
 
         listaProductos.appendChild(row);
         row.appendChild(divCard);
+        
 } )
 }
 
@@ -115,32 +117,21 @@ function quitarProducto(e){
 }
 
 function agregarProducto(event, id) 
-
 {
     if(!articulosCarrito.some(producto => producto.id == id)){
         let producto = stockProductos.find(producto => producto.id == id);
         producto.cantidad = 1;
         articulosCarrito.push(producto);
-        
-        let btnProductos = document.querySelector(".productos-boton");
-        btnProductos.style.backgroundColor = "#587B7F";
-        
         insertarCarritoHTML();
         guardarStorage();
-        
-        
     }
     else {
         articulosCarrito.map(producto => {
             if(producto.id == id) producto.cantidad++;
         });
-        
         insertarCarritoHTML();
         guardarStorage();
-
     }
-
-  
 }
 
 function ObtenerDatos (producto) {
@@ -201,7 +192,7 @@ function insertarCarritoHTML (){
             <td class="precio">$${precio}</td>
             <td class="img-eliminar"> <img style="cursor: pointer" src="./assets/imagenes/eliminar.png"  class="borrar-producto" data-id="${id}"> </td>
         `
-
+        
         contenedorCarrito.appendChild(row);
         cantidadProductos += cantidad;
         sumaPrecios += precio * cantidad;

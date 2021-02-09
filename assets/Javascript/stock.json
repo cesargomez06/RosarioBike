@@ -25,7 +25,7 @@
       "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_622532-MLA44496232755_012021-F.webp",
       "precio":57000,
       "id":"agregarProducto4",
-      "descripcion":" SISTEMA DE FRENO Disco mecánico TOPMEGA. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21. TALLE: M."
+      "descripcion":" SISTEMA DE FRENO Disco mecánico. MANIJAS DE CAMBIO Shimano Tourney. VELOCIDADES 21. TALLE: M."
     },
     {
       "nombre":"Bicicleta Topmega Mtb Thor Rodado 29",
@@ -40,5 +40,75 @@
       "precio":149000,
       "id":"agregarProducto6",
       "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Nordic X1.0 By Slp R29 21v Disco",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_676084-MLA44560172651_012021-F.webp",
+      "precio":47000,
+      "id":"agregarProducto7",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 21. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Mountain Bike Rodado 29 Slp 5",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_964592-MLA44049207762_112020-F.webp",
+      "precio":42000,
+      "id":"agregarProducto8",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Mountain Bike Rodado 29 Slp 10",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_870441-MLA44804800055_022021-F.webp",
+      "precio":44000,
+      "id":"agregarProducto9",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Mountain Bike Rodado 29 Forest",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_945371-MLA43895529480_102020-F.webp",
+      "precio":69000,
+      "id":"agregarProducto10",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Rodado 29 Mountain Bike Futura Lynce",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_949094-MLA44518473284_012021-F.webp",
+      "precio":44000,
+      "id":"agregarProducto11",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Mountain Bike Slp 10 R29",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_609767-MLA32169563010_092019-F.webp",
+      "precio":42000,
+      "id":"agregarProducto12",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Venzo Primal Ex Rod 29 F",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_813294-MLA41179660036_032020-F.webp",
+      "precio":1450000,
+      "id":"agregarProducto13",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Rodado 29 Mountain Bike Slp 10",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_820462-MLA41530148534_042020-F.webp",
+      "precio":42000,
+      "id":"agregarProducto14",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Mtb Venzo Amphion R27.5 - R26",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_870538-MLA44186314870_112020-F.webp",
+      "precio":100500,
+      "id":"agregarProducto15",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 20. TALLE: M"
+    },
+    {
+      "nombre":"Bicicleta Venzo Montain Bike Stinger 20 Vel.",
+      "imagen":"https://http2.mlstatic.com/D_NQ_NP_2X_701175-MLA44642392481_012021-F.webp",
+      "precio":200500,
+      "id":"agregarProducto15",
+      "descripcion":"SISTEMA DE FRENO Disco hidráulico Shimano. SISTEMA DE CAMBIOS. Shimano full Deore. VELOCIDADES 21. TALLE: M"
     }
   ]

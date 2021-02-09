@@ -3,13 +3,28 @@
     position: fixed;
     right: 20px;
     bottom: 15px;
-    width: 90px;
+    width: 12vh;
     height: auto;
+}
+.whatsapp p {
+    background-color:rgba(226, 192, 68, 0.651);
+    border-radius: 3vh;
+    display: none;
+    position: fixed;
+    right: 15vh;
+    bottom: 5vh;
+    width: 24vh;
+    text-align: center;
+    height: auto;
+    color: #1E2019;
+    padding: 2vh;
+    font-size: 3vh;
+    font-family: "roboto", sans-serif;
 }
 .subir img {
     display: inline-block;
     position: fixed;
     left: 15px;
     bottom: 15px;
-    width: 60px;
+    width: 10vh;
 }
