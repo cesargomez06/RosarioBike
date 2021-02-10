@@ -34,5 +34,21 @@
 
     .productos-todos {
         width: 50vh;
+        display: flex;
+        align-items: center;
+    }
+    .productos-todos img {
+        width: 50vh;
+    }
+}
+
+@media (min-width: 0px) and (max-width: 768px){
+    .productos-todos {
+        width: 50vh;
+        display: flex;
+        align-items: center;
+    }
+    .productos-todos img {
+        width: 50vh;
     }
 }

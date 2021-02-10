@@ -7,26 +7,7 @@ const formulario = document.querySelector("#formulario");
 const totalCarrito = document.getElementById("totalCarrito");
 const totalProductos = document.getElementById("totalProductos");
 
-// Jquery
-$(document).ready(function(){
-    $("a.logo").fadeIn(4000);
-});
 
-$(".whatsapp img").hover(function(){
-    $("p").slideDown(1000);
-})
-
-$(document).ready(function(){
-    linkInterno = $('a[href^="#"]');
-    linkInterno.on('click',function(e) {
-    e.preventDefault();
-    var href = $(this).attr('href');
-    $('html, body').animate({ scrollTop : $( href ).offset().top }, 1300, "easeInOutExpo");
-    });
-});
-
-let articulosCarrito = [];
-let stockProductos;
 
 // Listeners
 
@@ -54,6 +35,27 @@ document.addEventListener('DOMContentLoaded', () => {
 	insertarCarritoHTML();
 });
 
+// Jquery
+$(document).ready(function(){
+    $("a.logo").fadeIn(4000);
+});
+
+$(".whatsapp img").hover(function(){
+    $("p").slideDown(1000);
+})
+
+$(document).ready(function(){
+    linkInterno = $('a[href^="#"]');
+    linkInterno.on('click',function(e) {
+    e.preventDefault();
+    var href = $(this).attr('href');
+    $('html, body').animate({ scrollTop : $( href ).offset().top }, 1300, "easeInOutExpo");
+    });
+});
+
+let articulosCarrito = [];
+let stockProductos;
+
 // Funciones
 
 function cargarListaProductos(productos) {
@@ -79,9 +81,8 @@ function cargarListaProductos(productos) {
 
         listaProductos.appendChild(row);
         row.appendChild(divCard);
-        
-} )
-}
+});  
+};
 
 
 function filtrarProducto(e) {

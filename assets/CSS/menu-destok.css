@@ -25,6 +25,9 @@ h1 {
 .logo {
     display: none;
 }
+.productos-todos {
+    height: 110vh;
+}
 .productos-todos p{
     display: none;
 }
