@@ -23,12 +23,12 @@
     right: 0px;
     }
     .nosotros {
-        display: flex;
+        display: block;
         flex-wrap: wrap;
         justify-content: center;
     }
     .nosotros p {
-        font-size: 15px;
+        font-size: 1rem;
         text-align: center;
     }
 
@@ -36,9 +36,15 @@
         width: 50vh;
         display: flex;
         align-items: center;
+        height: 130vh;
     }
     .productos-todos img {
-        width: 50vh;
+        width: 40vh;
+        max-height: 25vh;
+    }
+    .contacto {
+        display: block;
+        font-size: 1rem;
     }
 }
 
@@ -47,8 +53,14 @@
         width: 50vh;
         display: flex;
         align-items: center;
+        height: 110vh;
     }
     .productos-todos img {
-        width: 50vh;
+        width: 40vh;
+        max-height: 25vh;
+    }
+    .contacto {
+        display: block;
+        font-size: 1rem;
     }
 }

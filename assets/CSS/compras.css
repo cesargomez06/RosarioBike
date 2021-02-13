@@ -1,8 +1,17 @@
-.menu-principal h1 {
+.menu-principal.compras {
+    padding: 1vh;
+}
+.menu-principal.compras h1 {
     grid-area: 1/2/1/3;
     align-self: center;
     font-size: 7vh;
 }
-.menu-principal-logo-img {
+.menu-principal-logo-img.compras {
     width: 30%;
+}
+main {
+    padding: 10vh;
+}
+.row.justify-content-between {
+    padding-left: 20%;
 }

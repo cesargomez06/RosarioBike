@@ -243,3 +243,10 @@ function disminuirCantidad(id){
     insertarCarritoHTML();
     guardarStorage();
 }
+const procesarPedido = document.getElementById("procesarPedido");
+    procesarPedido.addEventListener("click", procesarCompra);
+    
+function procesarCompra (e){
+        e.preventDefault();
+        location.href = "compras.html"
+}
