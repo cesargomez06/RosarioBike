@@ -173,7 +173,7 @@ function ObtenerDatos (producto) {
 
 }
 function guardarStorage() {
-    localStorage.setItem("carrito", JSON.stringify(articulosCarrito));
+    localStorage.setItem("carrito", JSON.stringify(articulosCarrito))||[];
 }
 
 function insertarCarritoHTML (){
