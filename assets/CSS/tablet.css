@@ -63,4 +63,20 @@
         display: block;
         font-size: 1rem;
     }
+    .menu-superior-lista {
+        display: none!important;
+    }
+    .portada div a img {
+        width: 50vh!important;
+    }
+    .nosotros h4 {
+        font-size: 1.5vh;
+    }
+    .menu-principal {
+        padding: 10px;
+    }
+    .menu-principal-buscar {
+        padding: unset;
+    }
 }
+
