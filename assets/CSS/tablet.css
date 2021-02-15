@@ -88,5 +88,15 @@
     .portada-tienda {
         width: 30vh!important;
     }
+    .modal {
+        width: 90%;
+        padding: 0px;
+    }
+    .total {
+        flex-wrap: wrap;
+    }
+    #lista-carrito {
+        width: 50%!important;
+    }
 }
 
