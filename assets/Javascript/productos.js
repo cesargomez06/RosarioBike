@@ -247,14 +247,8 @@ const procesarPedido = document.getElementById("procesarPedido");
     
 function procesarCompra(e){
         e.preventDefault();
-        if (articulosCarrito().length === 0){
-            swal.fire ({
-                type:"error",
-                title:" oops..",
-                text:"El carrito esta vacio, agrega algun producto",
-                timer:2000,
-                showConfirmButton:false
-            })
+        if (articulosCarrito.length === 0){
+            procesarPedido.disable = true
         }
         else {
             location.href = "compras.html"
