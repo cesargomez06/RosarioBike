@@ -44,4 +44,77 @@
      .productos-todos img {
          width: 300px;
      }
+     .productos-todos {
+        width: 40vh;
+        display: flex;
+        align-items: center;
+        height: 110vh;
+    }
+    .productos-todos img {
+        width: 40vh;
+        max-height: 25vh;
+    }
+    .contacto {
+        display: block;
+        font-size: 1rem;
+    }
+    .menu-superior-lista {
+        display: none!important;
+    }
+    .portada div a img {
+        display: none!important;
+    }
+
+    .nosotros h4 {
+        font-size: 1.5vh;
+    }
+    .menu-principal {
+        padding: 10px;
+    }
+    .menu-principal.compras h1 {
+        font-size: 1.2rem;
+    }
+    .menu-principal-buscar {
+        padding: unset;
+    }
+    .portada h2 {
+        font-size: 3vh!important;
+    }
+    .portada {
+        justify-content: unset!important;
+    }
+    .portada-tienda {
+        width: 30vh!important;
+    }
+    .modal {
+        width: 92%;
+        left: 0rem;
+        padding: 1rem;
+    }
+    .total {
+        width: 100%;
+        display: inline-block;
+        padding-top: 3vh;
+        text-align: -webkit-center;
+    }
+    #lista-carrito {
+        width: 50%!important;
+    }
+    .subir img {
+        width: 7vh;
+    }
+    .whatsapp img {
+        width: 10vh;
+    }
+    .modal-header {
+        font-size: 2vh;
+    }
+    .productos-boton.comprar {
+        width: 7rem;
+        font-size: 0.6rem;
+        height: 1.5rem;
+    }
+    .menu-principal.compras.compras h1 {
+        font-size: 1.5rem;
+    }
 }
