@@ -38,8 +38,8 @@ function procesarCompra(e){
                     Felicitaciones por tu compra
                 </div>
                 <div class="modal-footer">
-                  <a type="button" class="btn btn-secondary productos-boton comprar" data-dismiss="modal">Cerrar</a>
-                  <a type="button" class ="btn btn-secondary productos-boton comprar"  href="./index.html">volver a Inicio</a>
+                  <a type="button" class="btn btn-secondary productos-boton comprar" data-dismiss="modal">Volver</a>
+                  <a type="button" class ="btn btn-secondary productos-boton comprar"  href="./index.html">Seguir comprando</a>
                 </div>
               </div>
             </div>
