@@ -29,7 +29,8 @@
         <h3 class="compras">Realizar Compra</h3>
     <section class="compras">
 
-        <main>
+
+        <main id="contenedor-compras">
             <form action="enviar">
             <div class="form-group row">
                 <label for="cliente" class="col-12 col-md-2 col-form-label h2">Cliente :</label>
@@ -51,7 +52,7 @@
                     <a href="index.html" class="btn btn-info btn-block productos-boton">Seguir comprando</a>
                 </div>
                 <div class="col-xs-12 col-md-4">
-                    <button href="#" value="enviar" class="btn btn-success btn-block productos-boton" data-toggle="modal" data-target="#exampleModalCenter" id="procesar-compra">Realizar compra</button>
+                    <button href="#" type="submit" value="enviar" class="btn btn-success btn-block productos-boton" data-toggle="modal" data-target="#exampleModalCenter" id="procesar-compra">Realizar compra</button>
                 </div>
             </div>
         </form>
@@ -64,13 +65,13 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title compras" id="exampleModalLongTitle">Felicitaciones por tu compra</h5>
+          <h5 class="modal-title compras" id="exampleModalLongTitle">Tu compra fue realizada con éxito</h5>
           
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          Nos pondremos en contacto pronto
+            Felicitaciones por tu compra
         </div>
         <div class="modal-footer">
           <a type="button" class="btn btn-secondary productos-boton comprar" data-dismiss="modal">Cerrar</a>
@@ -108,7 +109,7 @@
             </a>
         </section>
     </footer>
-
+    <script src="./assets/Javascript/compras.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
